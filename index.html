@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0c2f5c">
+  <meta name="description" content="Simulasi SKD CPNS 2026 HOTS Aout Edu: TWK, TIU, dan TKP.">
+  <title>Aout Edu — Simulasi SKD CPNS 2026</title>
+  <link rel="icon" href="assets/owie.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <section id="accessView" class="view access-view">
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <main class="access-shell">
+      <div class="access-copy">
+        <div class="eyebrow"><span></span>AOUT EDU CAT PRACTICE</div>
+        <h1>Simulasi SKD<br><em>CPNS 2026</em></h1>
+        <p>110 soal HOTS dalam pengalaman ujian yang fokus, terukur, dan responsif.</p>
+        <div class="mini-stats"><div><strong>30</strong><span>TWK</span></div><div><strong>35</strong><span>TIU</span></div><div><strong>45</strong><span>TKP</span></div><div><strong>100'</strong><span>Waktu</span></div></div>
+      </div>
+      <div class="access-card glass-card">
+        <img class="owie-hero" src="assets/owie.png" alt="Owie, maskot Aout Edu">
+        <div class="brand-lockup"><span class="brand-mark">A</span><div><b>Aout Edu</b><small>Belajar dengan pola</small></div></div>
+        <h2>Akses simulasi</h2><p class="muted">Masukkan kode untuk membuka petunjuk ujian.</p>
+        <label class="field-label" for="accessCode">Kode akses</label>
+        <div class="input-wrap"><input id="accessCode" type="password" autocomplete="off" placeholder="Masukkan kode"><button id="toggleCode" class="icon-btn" type="button" aria-label="Tampilkan kode">◉</button></div>
+        <p id="accessError" class="form-error" role="alert"></p>
+        <button id="accessButton" class="primary-btn wide">Masuk ke Simulasi <span>→</span></button>
+        <p class="tiny-note">Materi latihan orisinal. Bukan soal resmi atau bocoran.</p>
+      </div>
+    </main>
+  </section>
+
+  <section id="instructionView" class="view hidden">
+    <header class="simple-header"><div class="brand-lockup"><img src="assets/owie.png" alt=""><div><b>Aout Edu</b><small>Simulasi SKD CPNS 2026</small></div></div><span class="status-pill">Belum dimulai</span></header>
+    <main class="instruction-shell">
+      <section class="instruction-hero"><div><span class="section-kicker">BACA SEBELUM START</span><h1>Petunjuk Simulasi</h1><p>Timer baru berjalan setelah tombol mulai ditekan. Kerjakan dalam satu sesi fokus.</p></div><div class="time-orb"><strong>100</strong><span>MENIT</span></div></section>
+      <section class="instruction-grid">
+        <article class="guide-card"><div class="guide-icon teal">01</div><h3>Komposisi</h3><p>TWK 1–30, TIU 31–65, dan TKP 66–110.</p></article>
+        <article class="guide-card"><div class="guide-icon gold">02</div><h3>Penilaian</h3><p>TWK/TIU benar 5; TKP setiap opsi bernilai 1–5.</p></article>
+        <article class="guide-card"><div class="guide-icon orange">03</div><h3>Navigasi</h3><p>Geser nomor, buka sidebar, tandai soal, dan kembali kapan saja.</p></article>
+        <article class="guide-card"><div class="guide-icon navy">04</div><h3>Auto finish</h3><p>Ujian dikumpulkan otomatis saat timer mencapai 00:00.</p></article>
+      </section>
+      <section class="warning-card"><div>!</div><p><b>Jangan menutup atau keluar selama simulasi.</b> Progres disimpan pada perangkat ini, tetapi sesi dapat hilang bila data browser dibersihkan atau Anda berpindah perangkat.</p></section>
+      <section class="material-map"><h2>Kisi-kisi ringkas</h2><div class="map-grid"><div><b>TWK</b><p>Nasionalisme, integritas, bela negara, pilar negara, bahasa negara.</p></div><div><b>TIU</b><p>Figural, analogi, silogisme, analitis, numerik, dan soal cerita.</p></div><div><b>TKP</b><p>Pelayanan publik, jejaring, sosial budaya, TIK, profesionalisme, anti-radikalisme.</p></div></div></section>
+      <label class="consent-row"><input id="consent" type="checkbox"><span>Saya telah membaca petunjuk dan siap mengerjakan tanpa membuka kunci atau pembahasan.</span></label>
+      <div class="instruction-actions"><button id="startButton" class="primary-btn" disabled>Mulai Ujian <span>→</span></button><button id="resumeButton" class="secondary-btn hidden">Lanjutkan Sesi</button></div>
+    </main>
+  </section>
+
+  <section id="examView" class="view hidden exam-view">
+    <header class="exam-header">
+      <button id="drawerButton" class="menu-btn" aria-label="Buka navigasi">☰</button>
+      <div class="brand-lockup compact"><img src="assets/owie.png" alt=""><div><b>Aout Edu</b><small id="sectionLabel">TWK</small></div></div>
+      <div class="exam-head-center"><div id="sectionBadge" class="section-badge twk">TWK</div><div class="progress-compact"><span id="answeredCompact">0/110 terjawab</span><div><i id="progressBar"></i></div></div></div>
+      <div id="timerBox" class="timer-box"><small>SISA WAKTU</small><strong id="timer">100:00</strong></div>
+    </header>
+    <div class="number-strip-wrap"><button id="stripLeft" class="strip-arrow">‹</button><nav id="numberStrip" class="number-strip" aria-label="Nomor soal"></nav><button id="stripRight" class="strip-arrow">›</button></div>
+    <div class="exam-layout">
+      <aside id="drawer" class="drawer">
+        <div class="drawer-head"><div><b>Navigasi Soal</b><small id="drawerSummary">0 terjawab</small></div><button id="drawerClose" class="close-btn">×</button></div>
+        <div class="filter-tabs"><button data-filter="all" class="active">Semua</button><button data-filter="answered">Terjawab</button><button data-filter="unanswered">Kosong</button><button data-filter="marked">Ditandai</button></div>
+        <div id="questionGrid" class="question-grid"></div>
+        <div class="legend"><span><i class="lg-current"></i>Aktif</span><span><i class="lg-answered"></i>Terjawab</span><span><i class="lg-marked"></i>Ditandai</span><span><i class="lg-empty"></i>Kosong</span></div>
+      </aside>
+      <main class="exam-main">
+        <div id="questionStage"></div>
+        <footer class="exam-actions"><button id="prevButton" class="secondary-btn">← Sebelumnya</button><button id="markButton" class="mark-btn">☆ Tandai</button><button id="nextButton" class="primary-btn">Berikutnya →</button></footer>
+        <button id="finishButton" class="finish-link">Selesaikan ujian</button>
+      </main>
+      <aside class="focus-rail"><div class="rail-card"><span>PROGRES</span><strong id="answeredCount">0</strong><small>terjawab</small></div><div class="rail-card"><span>KOSONG</span><strong id="unansweredCount">110</strong><small>belum dijawab</small></div><div class="rail-card"><span>RAGU</span><strong id="markedCount">0</strong><small>ditandai</small></div></aside>
+    </div>
+    <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  </section>
+
+  <section id="resultView" class="view hidden result-view">
+    <header class="simple-header"><div class="brand-lockup"><img src="assets/owie.png" alt=""><div><b>Aout Edu</b><small>Simulasi selesai</small></div></div><span class="status-pill success">Tersimpan</span></header>
+    <main class="result-shell">
+      <section class="result-hero"><div><span class="section-kicker">HASIL SIMULASI</span><h1>Skor Anda</h1><p>Halaman ini hanya menampilkan skor bagian dan total sesuai ketentuan.</p></div><img src="assets/owie.png" alt="Owie"></section>
+      <section class="score-grid"><article><span>TWK</span><strong id="scoreTwk">0</strong><small>/ 150</small></article><article><span>TIU</span><strong id="scoreTiu">0</strong><small>/ 175</small></article><article><span>TKP</span><strong id="scoreTkp">0</strong><small>/ 225</small></article><article class="total-card"><span>TOTAL</span><strong id="scoreTotal">0</strong><small>/ 550</small></article></section>
+      <section class="download-card"><div><span class="section-kicker">SALINAN PRIBADI</span><h2>Download jawabanmu</h2><p>PDF berisi soal dan jawaban yang Anda pilih, tanpa tanda benar/salah, tanpa kunci, dan tanpa pembahasan.</p></div><button id="downloadButton" class="primary-btn">Download Jawaban PDF ↓</button></section>
+      <section class="affie-card"><div class="steps"><div><span>1</span><p><b>Download jawabanmu</b><br>Simpan PDF sebagai bahan konsultasi.</p></div><div><span>2</span><p><b>Hubungi Kak Affie</b><br>Dapatkan kunci jawaban dan pembahasan lengkap.</p></div></div><div class="affie-cta"><h2>Mau tahu kamu salahnya di mana?</h2><p>Kirim hasil skor otomatis melalui WhatsApp setelah PDF jawaban tersimpan.</p><button id="whatsappButton" class="wa-btn">Hubungi Kak Affie via WhatsApp</button></div></section>
+      <button id="resetButton" class="reset-link">Mulai simulasi baru</button>
+    </main>
+  </section>
+</div>
+
+<div id="finishModal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card"><button class="modal-x" data-close-modal>×</button><span class="section-kicker">KONFIRMASI</span><h2>Selesaikan ujian?</h2><div id="finishStats" class="finish-stats"></div><p>Setelah dikumpulkan, jawaban tidak dapat diubah.</p><div class="modal-actions"><button data-close-modal class="secondary-btn">Kembali mengerjakan</button><button id="confirmFinish" class="danger-btn">Ya, selesaikan</button></div></div></div>
+<div id="imageModal" class="modal image-modal hidden"><div class="image-modal-card"><button id="imageModalClose" class="modal-x">×</button><img id="zoomImage" alt="Stimulus figural"></div></div>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script src="data/questions.js"></script><script src="js/app.js"></script>
+</body></html>
