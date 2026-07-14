@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+<title id="title">Aout Edu</title><desc id="desc">Logo pendidikan Aout Edu dengan buku dan topi wisuda</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#1fa8a5"/><stop offset="1" stop-color="#0c2f5c"/></linearGradient></defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M32 112c43-20 86-13 126 16V65C116 39 74 40 32 57z" fill="#1fa8a5"/>
+<path d="M158 128c40-29 83-36 126-16V57c-42-17-84-18-126 8z" fill="#0c2f5c"/>
+<path d="M91 39l69-27 69 27-69 27z" fill="#0c2f5c"/><path d="M218 44v45" stroke="#d8aa35" stroke-width="8"/>
+<circle cx="218" cy="94" r="8" fill="#d8aa35"/>
+</g>
+<text x="315" y="91" font-family="Arial,Helvetica,sans-serif" font-size="70" font-weight="800" fill="#0c2f5c">Aout Edu</text>
+<text x="318" y="132" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="600" fill="#1fa8a5">Belajar dengan pola</text>
+</svg>
